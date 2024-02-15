@@ -13,3 +13,50 @@
 .increment button {
   margin: 0 50px; /* Adjust the value to increase or decrease the space */
 }
+
+.container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-wrapper {
+  margin-bottom: 20px;
+}
+
+.input-wrapper input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input-wrapper button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.increment {
+  display: flex;
+  align-items: center;
+}
+
+.increment button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 10px; /* Add space between buttons */
+}
+
+.increment h4 {
+  margin: 0 10px; /* Add space between number and buttons */
+}
+

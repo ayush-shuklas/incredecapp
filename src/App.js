@@ -1,47 +1,47 @@
 import './App.css';
 import { useState } from 'react';
-import { UseDispatch,useDispatch,useSelector } from 'react-redux';
-import { decnumber,incnumber } from './actions/Action';
+import { useDispatch, useSelector } from 'react-redux';
+import { decnumber, incnumber } from './actions/Action';
 
 function App() {
-  const [count, setcount] = useState(0)
-  const [sendcount,setSendcount] = useState(0);
+  const [count, setCount] = useState(0);
+  const [sendCount, setSendCount] = useState(0);
 
-  const mystate = useSelector((state) => state.changenumber);
+  const myState = useSelector((state) => state.changenumber);
   const dispatch = useDispatch();
 
-  const handleInputChange =(e)=>{
-    setcount(parseInt(e.target.value))
-  }
+  const handleInputChange = (e) => {
+    setCount(parseInt(e.target.value));
+  };
 
-  const handleButtonClick =()=>{
-    setSendcount(parseInt(count));
+  const handleButtonClick = () => {
+    setSendCount(parseInt(count));
+  };
 
-  }
   return (
     <>
-    <div>
-    <input
-          type="text"
-          id="nameInput"
-          onChange={handleInputChange}
-        />
-        <button onClick={handleButtonClick}>Display Name</button>
-    </div>
-    <div className='inccontainer'>
-    <div className='increment'>
-      <button onClick={() => dispatch(decnumber(sendcount))}>
-        -
-      </button>
-      <h4>
-        {mystate}
-      </h4>
-      <button onClick={() => dispatch(incnumber(sendcount))}>
-        +
-      </button>
+      <div className='container'>
+        <h1>Enter number</h1>
+        <div className='input-wrapper'>
+          <input
+            type='text'
+            id='nameInput'
+            onChange={handleInputChange}
+            value={count}
+          />
+          <button onClick={handleButtonClick}>Click to save Count</button>
+        </div>
       </div>
-    </div>
-    
+
+      <div className='container'>
+        <div className='inccontainer'>
+          <div className='increment'>
+            <button onClick={() => dispatch(decnumber(sendCount))}>-</button>
+            <h4>{myState}</h4>
+            <button onClick={() => dispatch(incnumber(sendCount))}>+</button>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
